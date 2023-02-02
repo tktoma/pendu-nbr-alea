@@ -19,7 +19,6 @@ public:
 	bool lancement();
 	int difficulter(char diff);
 	bool jeu();
-	int test();
 	jeu_pendu();
 };
 

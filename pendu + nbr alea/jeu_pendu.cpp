@@ -73,17 +73,10 @@ bool jeu_pendu::mode(char mode)
 		}
 		return 1;
 	}
-	else
-	{
-		return 0;
-	}
 }
 
 
-int jeu_pendu::test()
-{
-				return 0;
-}
+
 
 jeu_pendu::jeu_pendu()
 {
@@ -199,7 +192,6 @@ bool jeu_pendu::lancement()
 					{
 						string stp;
 						g = 0;
-
 						this_thread::sleep_for(chrono::milliseconds(10));
 
 						if (difficulter(choix) == 2)
