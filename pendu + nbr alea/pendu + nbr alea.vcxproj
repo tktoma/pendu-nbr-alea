@@ -127,11 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="bataille_navalle.h" />
+    <ClInclude Include="cadrillage.h" />
+    <ClInclude Include="jeu_pendu.h" />
     <ClInclude Include="lirefichier.h" />
     <ClInclude Include="nbr_aleatoire.h" />
     <ClInclude Include="verif.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="bataille_navalle.cpp" />
+    <ClCompile Include="cadrillage.cpp" />
+    <ClCompile Include="jeu_pendu.cpp" />
     <ClCompile Include="lirefichier.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="nbr_aleatoire.cpp" />
