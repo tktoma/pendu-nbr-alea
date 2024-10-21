@@ -89,7 +89,6 @@ void nbr_aleatoire::lancement()
 		cin >> min;
 		cin >> max;
 		init_difficulter(difficulter, min, max);
-
 	}
 	else
 	{
@@ -106,5 +105,4 @@ void nbr_aleatoire::lancement()
 
 nbr_aleatoire::~nbr_aleatoire()
 {
-	
 }

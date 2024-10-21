@@ -9,7 +9,7 @@ bool verif::lettre_t(char* lettrechoisie)
     for (i = 0; i < taille; i++)
     {
         this_thread::sleep_for(chrono::milliseconds(10));
-        if (lettrechoisie[taille2 - 1] == motchoisie[i])//si la derniËre lettre choisie est Ègale a l'une des lettre du mot 
+        if (lettrechoisie[taille2 - 1] == motchoisie[i])//si la derni√®re lettre choisie est √©gale a l'une des lettre du mot 
         {
             y = 1;//mettre y a 1
         }
@@ -21,7 +21,7 @@ bool verif::lettre_t(char* lettrechoisie)
     }
     else
     {
-        return false;// sinon retournÈ false
+        return false;// sinon retourn√© false
     }
 }
 
@@ -43,14 +43,14 @@ bool verif::transfo_txt_to_asterisk(char* lettrechoisie)
         }
         else if (!strchr(lettrechoisie, motchoisie[i]) && motchoisie[i] != 0)// si il trouve pas
         {
-            cout << "*";//marquÈ des asterisk
+            cout << "*";//marqu√© des asterisk
 
         }
     }
 
     if (win_cond == taille)
     {
-        return true;// si la taille est Ègale au point de victoire alors c gagner
+        return true;// si la taille est √©gale au point de victoire alors c gagner
     }
     else
     {
@@ -60,7 +60,7 @@ bool verif::transfo_txt_to_asterisk(char* lettrechoisie)
 }
 
 
-string verif::lettre_utilisÈ(char lettrechoisie)
+string verif::lettre_utilis√©(char lettrechoisie)
 {
     char lettre[26] = { 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z' }; // alphabet pour les verification
     int i = 0;
@@ -328,14 +328,14 @@ void verif::pendu(char difficulter, int coups)
         }
         if (difficulter == '5')
         {
-            cout << pendu[coups * 8 - 1]; // calcul pour que ca coresponde au nbr de coups associÈ a la difficulter
+            cout << pendu[coups * 8 - 1]; // calcul pour que ca coresponde au nbr de coups associ√© a la difficulter
         }
 }
 // constructeur
 verif::verif()
 {
     mot = new lirefichier("mot.txt"); //def du nom/chemin du fichier
-    this->motchoisie = mot->mothasard();// pioche un mot au hasard de maniËre auto
+    this->motchoisie = mot->mothasard();// pioche un mot au hasard de mani√®re auto
 }
 // destructeur
 verif::~verif()

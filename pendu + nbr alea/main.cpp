@@ -7,5 +7,4 @@ int main()
 	nbr_aleatoire jeu2;
 	cadrillage ui(0,0);
 	ui.cadreaffiche();
-
 }
