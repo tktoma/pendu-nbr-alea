@@ -12,7 +12,6 @@ class cadrillage
 private:
 	int x = 0;
 	char y = 0;
-	string mon_cadre;
 	string cadre =
 	{
 	    "---------------------------------------------\n"\
@@ -42,8 +41,9 @@ private:
 public:
 	cadrillage(int x2,char y2);
 	void set(int x2, char y2);
-	void cadreaffiche();
+	void cadreaffiche(string cadre);
 	int choix(char ver);
 	void replace(int x, int y);
+	string * crea_cadre();
 };
 

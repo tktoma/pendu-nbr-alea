@@ -12,10 +12,10 @@ void cadrillage::set(int x2, char y2)
 	this->y = x2;
 }
 
-void cadrillage::cadreaffiche()
+void cadrillage::cadreaffiche(string cadre2)
 {
-	int inf = cadre.size() ;
-	cout << cadre;
+	int inf = cadre2.size() ;
+	cout << cadre2;
 	cout << inf;
 }
 
@@ -39,10 +39,9 @@ int cadrillage::choix(char ver)
 }
 void cadrillage::replace(int x, int y)
 {
-    string sx, sy;
-    sx = x;
-    sy = y;
-    this->cadre.replace(46+2+ (46*(y*2)) + (4*x), 1, "*");
+    cadre.replace(46+2+ (46*(y*2)) + (4*x), 1, "*");
 }
-
-
+string * cadrillage::crea_cadre()
+{
+    return &cadre;
+}
