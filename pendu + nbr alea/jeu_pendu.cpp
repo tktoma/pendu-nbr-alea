@@ -241,7 +241,7 @@ bool jeu_pendu::lancement()
 
 						}
 
-						result = (ui->lettre_utilisé(*su2));
+						result = (ui->lettre_utiliser(*su2));
 						int pos = result.find_first_not_of(" ");
 						stp = result[pos];
 

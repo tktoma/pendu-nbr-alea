@@ -19,7 +19,7 @@ void cadrillage::cadreaffiche()
 	cout << inf;
 }
 
-void cadrillage::test()
+/*void cadrillage::test()
 {
 	vector<char> lettre;
 	int nbr_alea1;
@@ -31,4 +31,4 @@ void cadrillage::test()
 	nbr_alea2 += 45;
 	lettre = 
 	cout << nbr_alea1 << lettre;
-}
+}*/
