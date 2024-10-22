@@ -4,12 +4,15 @@
 #include <chrono>
 #include <vector>
 #include <array>
+#include <ctime>
 #include <iterator>
 using namespace std;
 class cadrillage
 {
 private:
-	int x = 0, y = 0;
+	int x = 0;
+	char y = 0;
+	string mon_cadre;
 	string cadre =
 	{
 	    "---------------------------------------------\n"\
@@ -37,9 +40,10 @@ private:
 		"---------------------------------------------\n"\
 	};
 public:
-	cadrillage(int x2,int y2);
-	void set(int x2, int y2);
+	cadrillage(int x2,char y2);
+	void set(int x2, char y2);
 	void cadreaffiche();
-	void test();
+	int choix(char ver);
+	void replace(int x, int y);
 };
 

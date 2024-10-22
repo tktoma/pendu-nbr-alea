@@ -60,7 +60,7 @@ bool verif::transfo_txt_to_asterisk(char *lettrechoisie)
 }
 
 
-string verif::lettre_utilisé(char lettrechoisie)
+string verif::lettre_utiliser(char lettrechoisie)
 {
     char lettre[26] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'}; // alphabet pour les verification
     int i = 0;

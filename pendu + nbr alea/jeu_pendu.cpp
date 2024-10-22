@@ -80,6 +80,12 @@ bool jeu_pendu::mode(char mode)
 
 jeu_pendu::jeu_pendu()
 {
+	this->diff = ' ';
+	this->nb_coups = 0;
+	this->coup = 0;
+	this->stop = ' ';
+	this->coupR = 0;
+	this->diffcoup = 0;
 }
 
 bool jeu_pendu::lancement()

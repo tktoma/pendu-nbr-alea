@@ -6,10 +6,10 @@
 class jeu_pendu
 {
 private:
-	char lettre[26] = { 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z' };
+	char lettre[26] = { 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z' };;
 	char diff;
 	int nb_coups;
-	int coup = 0;
+	int coup;
 	char stop;
 	int coupR;
 	int diffcoup;
