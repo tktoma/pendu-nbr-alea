@@ -1,25 +1,49 @@
-#ifndef CADRILLAGE_H
-#define CADRILLAGE_H
-
-#include <string>
+#pragma once
 #include <iostream>
-
-class Cadrillage {
-public:
-    Cadrillage(int lignes, int colonnes);
-    void afficher() const;
-
-    void ligne();
-    int  getColonnes() const;
-    int  getLignes() const;
-    std::string& get_cad() ;
-    void setGrille(const std::string& newGrille);
-
+#include <thread>
+#include <chrono>
+#include <vector>
+#include <array>
+#include <ctime>
+#include <iterator>
+using namespace std;
+class cadrillage
+{
 private:
-    int lignes;
-    int colonnes;
-    std::string grille; // Utilisation d'une chaîne de caractères pour le cadrillage
-    void construireGrille(); // Méthode pour construire la grille
+	int x = 0;
+	char y = 0;
+	string cadre =
+	{
+	    "---------------------------------------------\n"\
+		"|   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10|\n"\
+		"---------------------------------------------\n"\
+		"| A |   |   |   |   |   |   |   |   |   |   |\n"\
+		"---------------------------------------------\n"\
+		"| B |   |   |   |   |   |   |   |   |   |   |\n"\
+		"---------------------------------------------\n"\
+		"| C |   |   |   |   |   |   |   |   |   |   |\n"\
+		"---------------------------------------------\n"\
+		"| D |   |   |   |   |   |   |   |   |   |   |\n"\
+		"---------------------------------------------\n"\
+		"| E |   |   |   |   |   |   |   |   |   |   |\n"\
+		"---------------------------------------------\n"\
+		"| F |   |   |   |   |   |   |   |   |   |   |\n"\
+		"---------------------------------------------\n"\
+		"| G |   |   |   |   |   |   |   |   |   |   |\n"\
+		"---------------------------------------------\n"\
+		"| H |   |   |   |   |   |   |   |   |   |   |\n"\
+		"---------------------------------------------\n"\
+		"| I |   |   |   |   |   |   |   |   |   |   |\n"\
+		"---------------------------------------------\n"\
+		"| J |   |   |   |   |   |   |   |   |   |   |\n"\
+		"---------------------------------------------\n"\
+	};
+public:
+	cadrillage(int x2,char y2);
+	void set(int x2, char y2);
+	void cadreaffiche(string cadre);
+	int choix(char ver);
+	void replace(int x, int y);
+	string * crea_cadre();
 };
 
-#endif // CADRILLAGE_H

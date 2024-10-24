@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Verif_cadrillage.h" />
+    <ClInclude Include="bataille_navalle.h" />
     <ClInclude Include="cadrillage.h" />
     <ClInclude Include="jeu_pendu.h" />
     <ClInclude Include="lirefichier.h" />
@@ -135,7 +135,7 @@
     <ClInclude Include="verif.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Verif_cadrillage.cpp" />
+    <ClCompile Include="bataille_navalle.cpp" />
     <ClCompile Include="cadrillage.cpp" />
     <ClCompile Include="jeu_pendu.cpp" />
     <ClCompile Include="lirefichier.cpp" />
