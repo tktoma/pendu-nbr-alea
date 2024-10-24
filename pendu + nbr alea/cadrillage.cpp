@@ -1,47 +1,80 @@
 #include "cadrillage.h"
 
-cadrillage::cadrillage(int x2, char y2)
-{
-	this->x = x2;
-	this->y = x2;
+// Constructeur
+Cadrillage::Cadrillage(int lignes, int colonnes) : lignes(lignes), colonnes(colonnes) {
+    // Limiter les dimensions à 26x26
+    if (lignes > 26)  {
+        this->lignes = 26;
+    }
+    if (colonnes > 26) {
+        this->colonnes = 26;
+    }
+    construireGrille(); // Construire la grille vide
+}
+void Cadrillage::setGrille(const std::string& newGrille) {
+    grille = newGrille; // Mettre à jour la grille
 }
 
-void cadrillage::set(int x2, char y2)
-{
-	this->x = x2;
-	this->y = x2;
-}
+// Méthode pour construire la grille
+void Cadrillage::construireGrille() {
+    grille.clear(); // Réinitialiser la chaîne de la grille
 
-void cadrillage::cadreaffiche(string cadre2)
-{
-	int inf = cadre2.size() ;
-	cout << cadre2;
-	cout << inf;
-}
+    // Ajouter la première ligne de séparation
+    ligne();
+    grille += "|   |"; // Cellule vide pour le coin supérieur gauche
 
-int cadrillage::choix(char ver)
-{
-    char lettre[10] = { 'A','B','C','D','E','F','G','H','I','J'}; // alphabet pour les verification
-    int i = 0;
-    size_t taille = strlen(&lettre[10]) - 8;//taille des lettres
-    char jenaimar = 0;
-    jenaimar = toupper(ver);// tout en majuscule
-    for (i = 0; i < taille; i++)
-    {
-        this_thread::sleep_for(chrono::milliseconds(10));
-
-        if (strchr(&jenaimar, lettre[i]) && lettre[i] != 0)// si il trouve une lettre de l'alphabet
+    // Ajouter les en-têtes des colonnes
+    for (int j = 1; j <= colonnes; ++j) {
+        if (j < 10) {
+            grille += " " + std::to_string(j) + " |"; // Un espace pour les chiffres à un chiffre
+        }
+        else if (j == 10)
         {
-            return i + 1;
+            grille += std::to_string(j) + " | "; // Pas d'espace pour les chiffres à deux chiffres
+        }
+        else {
+            grille += std::to_string(j) + "| "; // Pas d'espace pour les chiffres à deux chiffres
         }
     }
-    return 0;
+    grille += "\n";
+    ligne();
+
+
+    // Ajouter les lignes avec les lettres A, B, C, ...
+    for (int i = 0; i < lignes; ++i) {
+        grille += "| " + std::string(1, 'A' + i) + " "; // Ajouter les lettres A, B, C, ...
+
+        for (int j = 0; j < colonnes; ++j) {
+            grille += "|   "; // Ajouter les cellules vides
+        }
+        grille += "|\n"; // Fermer la ligne
+        ligne(); // Ajouter la ligne de séparation
+    }
 }
-void cadrillage::replace(int x, int y)
+
+int Cadrillage::getColonnes() const
 {
-    cadre.replace(46+2+ (46*(y*2)) + (4*x), 1, "*");
+    return this->colonnes;
 }
-string * cadrillage::crea_cadre()
+
+int Cadrillage::getLignes() const
 {
-    return &cadre;
+    return this->lignes;
+}
+
+// Méthode pour afficher le cadrillage
+void Cadrillage::afficher() const {
+    std::cout << grille; // Afficher la chaîne qui contient tout le cadrillage
+}
+void Cadrillage::ligne()     // Ligne de séparation après les en-têtes
+{
+    for (int i = 0; i < ((colonnes + 1) * 4) + 1; ++i) {
+        grille += "-";
+    }
+    grille += "\n";
+}
+
+std::string& Cadrillage::get_cad() 
+{
+    return grille;
 }
