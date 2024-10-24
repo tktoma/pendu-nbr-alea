@@ -5,7 +5,7 @@ int nbr_aleatoire::choix_nombre()
 {
 	if (i == 0)
 	{
-	srand(time(NULL));
+	srand(time_t(NULL));
 	nbr_alea = (rand() % (this->max - this->min));
 	i++;
 	}
@@ -30,12 +30,16 @@ bool nbr_aleatoire::test()
 	{
 		return true;
 	}
+	return false;
 }
 
 nbr_aleatoire::nbr_aleatoire(int m, int n)
 {
 	this->max = m;
 	this->min = n;
+	this->difficulter = 0;
+	this->nbr_alea = 0;
+	this->nbr_choisie = 0;
 
 }
 

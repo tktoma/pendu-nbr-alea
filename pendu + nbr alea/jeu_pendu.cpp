@@ -73,6 +73,7 @@ bool jeu_pendu::mode(char mode)
 		}
 		return 1;
 	}
+	return 0;
 }
 
 
@@ -248,7 +249,7 @@ bool jeu_pendu::lancement()
 						}
 
 						result = (ui->lettre_utiliser(*su2));
-						int pos = result.find_first_not_of(" ");
+						size_t pos = result.find_first_not_of(" ");
 						stp = result[pos];
 
 						result2.replace(pos, 1, stp);// ca permet de stocké les lettre utiliser et de toute les afficher en plus de remettre au meme endroit celle déjas utilisé
@@ -302,4 +303,5 @@ bool jeu_pendu::lancement()
 						}
 					}
 				}
+				return 0;
 			}
