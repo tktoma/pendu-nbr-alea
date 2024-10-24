@@ -1,4 +1,4 @@
-#include "Bataille_Navalle.h"
+#include "Verif_cadrillage.h"
 #include <cctype>
 #include <chrono>
 #include <cstring>
@@ -6,10 +6,10 @@
 #include <thread>
 
 // Constructeur
-BatailleNavale::BatailleNavale(Cadrillage& cadrillage) : cadrillage(cadrillage) {}
+Verif_cadrillage::Verif_cadrillage(Cadrillage& cadrillage) : cadrillage(cadrillage) {}
 
 // Méthode pour obtenir l'index correspondant à une lettre (ex. 'A' = 0, 'B' = 1, ...)
-int BatailleNavale::obtenirIndexLettre(char lettre) {
+int Verif_cadrillage::obtenirIndexLettre(char lettre) {
     lettre = toupper(lettre); // Convertir en majuscule pour éviter les erreurs
 
     if (lettre >= 'A' && lettre <= 'Z') {
@@ -20,7 +20,7 @@ int BatailleNavale::obtenirIndexLettre(char lettre) {
 }
 
 // Méthode pour placer un astérisque dans le cadrillage à une position donnée
-bool BatailleNavale::placerAsterisque(char lettre, int chiffre) {
+bool Verif_cadrillage::placerAsterisque(char lettre, int chiffre) {
     int colonnes = cadrillage.getColonnes();
     int lignes = cadrillage.getLignes();
     int ligneIndex = obtenirIndexLettre(lettre); // Obtenir l'index de la ligne à partir de la lettre
@@ -48,7 +48,7 @@ bool BatailleNavale::placerAsterisque(char lettre, int chiffre) {
 }
 
 // Méthode pour entrer les astérisques avec un nombre modulable de points
-void BatailleNavale::entrerAsterisques(int nombrePoints) {
+void Verif_cadrillage::entrerAsterisques(int nombrePoints) {
     char* lettres = new char[nombrePoints]; 
     int* chiffres = new int[nombrePoints];   
     bool valid = false;
@@ -105,7 +105,7 @@ void BatailleNavale::entrerAsterisques(int nombrePoints) {
 }
 
 // Méthode pour annuler un astérisque
-void BatailleNavale::annulerAsterisque(char lettre, int chiffre) {
+void Verif_cadrillage::annulerAsterisque(char lettre, int chiffre) {
     std::string& grille = cadrillage.get_cad();
     int ligneIndex = obtenirIndexLettre(lettre);
     int reglage_jsp_pk = (cadrillage.getColonnes() < 10) ? -1 : 0;
@@ -118,7 +118,7 @@ void BatailleNavale::annulerAsterisque(char lettre, int chiffre) {
 }
 
 // Vérification de la validité des points
-bool BatailleNavale::verifierPoints(const char lettres[], const int chiffres[], int nombrePoints) {
+bool Verif_cadrillage::verifierPoints(const char lettres[], const int chiffres[], int nombrePoints) {
     if (nombrePoints < 2) {
         return false; // Doit avoir au moins 2 points
     }

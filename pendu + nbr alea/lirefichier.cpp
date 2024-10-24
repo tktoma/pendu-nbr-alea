@@ -84,7 +84,7 @@ void lirefichier::afficher_mot()
 
 string lirefichier::mothasard()
 {
-    srand(time(NULL));// remet le (temps) a zero
+    srand(time_t(NULL));// remet le (temps) a zero
     int MIN = 0;//choix du minimum possible
     int nombre_mot = 0;// nombre de mot dans le fichier
     int i = 0;

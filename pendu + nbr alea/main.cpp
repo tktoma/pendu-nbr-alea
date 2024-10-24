@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Bataille_Navalle.h"
+#include "verif_cadrillage.h"
 #include "cadrillage.h"
 
 int main() {
@@ -10,7 +10,7 @@ int main() {
     Cadrillage cadrillage(lignes, colonnes);
 
     // Création de l'objet BatailleNavale
-    BatailleNavale batailleNavale(cadrillage);
+    Verif_cadrillage verif_cadrillage(cadrillage);
 
     // Boucle principale pour entrer des points d'astérisques
     char continuer;
@@ -20,15 +20,15 @@ int main() {
         std::cout << cadrillage.get_cad() << std::endl;
 
         // Entrée des astérisques
-        batailleNavale.entrerAsterisques(4);
-        batailleNavale.entrerAsterisques(4);
-        batailleNavale.entrerAsterisques(3);
-        batailleNavale.entrerAsterisques(3);
-        batailleNavale.entrerAsterisques(3);
-        batailleNavale.entrerAsterisques(2);
-        batailleNavale.entrerAsterisques(2);
-        batailleNavale.entrerAsterisques(2);
-        batailleNavale.entrerAsterisques(2);
+        verif_cadrillage.entrerAsterisques(4);
+        verif_cadrillage.entrerAsterisques(4);
+        verif_cadrillage.entrerAsterisques(3);
+        verif_cadrillage.entrerAsterisques(3);
+        verif_cadrillage.entrerAsterisques(3);
+        verif_cadrillage.entrerAsterisques(2);
+        verif_cadrillage.entrerAsterisques(2);
+        verif_cadrillage.entrerAsterisques(2);
+        verif_cadrillage.entrerAsterisques(2);
 
         // Demander à l'utilisateur s'il veut continuer
         std::cout << "Voulez-vous placer d'autres astérisques ? (o/n) : ";

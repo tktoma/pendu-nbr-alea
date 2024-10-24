@@ -1,12 +1,12 @@
-#ifndef BATAILLE_NAVALE_H
-#define BATAILLE_NAVALE_H
+#ifndef VERIF_CADRILLAGE_H
+#define VERIF_CADRILLAGE_H
 
 #include <string>
 #include "cadrillage.h"
 
-class BatailleNavale {
+class Verif_cadrillage {
 public:
-    BatailleNavale(Cadrillage& cadrillage);
+    Verif_cadrillage(Cadrillage& cadrillage);
 
     bool placerAsterisque(char lettre, int chiffre); // Placer un astérisque à une position donnée
 
