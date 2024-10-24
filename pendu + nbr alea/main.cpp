@@ -20,7 +20,15 @@ int main() {
         std::cout << cadrillage.get_cad() << std::endl;
 
         // Entrée des astérisques
-        batailleNavale.entrerAsterisques();
+        batailleNavale.entrerAsterisques(4);
+        batailleNavale.entrerAsterisques(4);
+        batailleNavale.entrerAsterisques(3);
+        batailleNavale.entrerAsterisques(3);
+        batailleNavale.entrerAsterisques(3);
+        batailleNavale.entrerAsterisques(2);
+        batailleNavale.entrerAsterisques(2);
+        batailleNavale.entrerAsterisques(2);
+        batailleNavale.entrerAsterisques(2);
 
         // Demander à l'utilisateur s'il veut continuer
         std::cout << "Voulez-vous placer d'autres astérisques ? (o/n) : ";
